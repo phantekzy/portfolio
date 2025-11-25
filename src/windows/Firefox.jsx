@@ -11,8 +11,8 @@ const Firefox = () => {
     const { windows } = useWindowStore()
     /* importing isOpen */
     const isOpen = windows["firefox"]?.isOpen
-    const [inputValue, setInputValue] = useState("")
     const inputRef = useRef(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (isOpen) inputRef.current?.focus();
@@ -37,10 +37,15 @@ const Firefox = () => {
 
             </div>
             <div className="flex flex-col items-center justify-center  bg-transparent text-black  ">
+                {loading && <div className="absolute top-0 left-0 w-full h-full flex items-center
+                                            justify-center text-white">
+                    Loading...
+                </div>}
                 <iframe
-                    className="w-full"
+                    className="w-full h-full"
                     src="https://en.wikipedia.org/wiki"
                     style={{ width: '99%', height: '100vh' }}
+                    onLoad={() => setLoading(false)}
                 ></iframe>
 
             </div>
