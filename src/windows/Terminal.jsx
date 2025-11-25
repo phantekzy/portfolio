@@ -42,13 +42,14 @@ const Terminal = () => {
         if (isOpen) inputRef.current?.focus();
     }, [linesState, isOpen]);
 
+    /* Removed it because i added a trick for react i added a keyring so it renders again after closeing */
     // Reset terminal when closed
-    useEffect(() => {
+    /* useEffect(() => {
         if (!isOpen) {
             setLinesState([]);
             setInput("");
         }
-    }, [isOpen]);
+    }, [isOpen]); */
 
     /* Github repositories */
     const fetchGitHubRepos = async () => {

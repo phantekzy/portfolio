@@ -4,6 +4,9 @@ import { Dock } from "./components/Dock"
 import { Navbar } from "./components/Navbar"
 import { Draggable } from "gsap/Draggable"
 import TerminalWindow from "./windows/Terminal"
+import FirefoxWindow from "./windows/Firefox"
+
+/* GSAP Registre */
 gsap.registerPlugin(Draggable)
 
 /* App component section */
@@ -16,6 +19,8 @@ function App() {
             <Dock />
             {/* Terminal window */}
             <TerminalWindow />
+            {/* Firefox window */}
+            <FirefoxWindow />
         </main>
     )
 }

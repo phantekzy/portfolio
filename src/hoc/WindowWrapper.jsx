@@ -1,5 +1,5 @@
 /* Import section */
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useWindowStore } from "../store/window";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,6 +11,18 @@ export function WindowWrapper(Component, windowKey) {
         const { isOpen, zIndex } = windows[windowKey];
         const ref = useRef(null);
 
+        /* Input focus for all the windows */
+        const isFocused = windows[windowKey]?.zIndex === Math.max(...Object.values(windows).map(w => w.zIndex))
+
+        /* useEffect for the window focus */
+        useEffect(() => {
+            if (!isFocused) return;
+            const element = ref.current;
+            if (!element) return;
+            const input = element.querySelector("input");
+            input?.focus();
+        }, [isFocused])
+        //
         // Animation on open
         useGSAP(() => {
             const element = ref.current;
@@ -52,7 +64,8 @@ export function WindowWrapper(Component, windowKey) {
                 style={{ zIndex }}
                 className="absolute"
             >
-                <Component {...props} />
+                {/* Added a tree to trick react so he reander a new component */}
+                <Component {...props} key={String(isOpen)} />
             </section>
         );
     };
