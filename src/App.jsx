@@ -6,12 +6,20 @@ import { Draggable } from "gsap/Draggable"
 import TerminalWindow from "./windows/Terminal"
 import FirefoxWindow from "./windows/Firefox"
 import ResumeWindow from "./windows/Resume"
+import { useState } from "react"
+import { BootScreen } from "./BootScreen"
 
 /* GSAP Registre */
 gsap.registerPlugin(Draggable)
 
 /* App component section */
 function App() {
+    const [booted, setBooted] = useState(false)
+    if (!booted) {
+        return <BootScreen onFinish={() => setBooted(true)} />
+    }
+
+
     return (
         <main>
             {/* Navigation bar section */}
