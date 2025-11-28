@@ -1,6 +1,6 @@
 /* Import section */
-import { Immer } from "zustand/middleware";
 import { create } from "zustand";
+import { immer } from "zustand/middleware/immer";
 import { locations } from "../constants";
 
 /* Default location */
@@ -8,7 +8,7 @@ const DEFAULT_LOCATION = locations.work;
 
 /* Location store */
 export const useLocationStore = create(
-  Immer((set) => ({
+  immer((set) => ({
     activeLocation: DEFAULT_LOCATION,
 
     setActiveLocation: (location = null) =>

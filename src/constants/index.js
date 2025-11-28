@@ -1,8 +1,8 @@
 const navLinks = [
   {
     id: 1,
-    name: "Projects",
-    type: "projects",
+    name: "Files",
+    type: "files",
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const navIcons = [
 
 const dockApps = [
   {
-    id: "projects",
-    name: "Portfolio", // was "Finder"
+    id: "files",
+    name: "Files", // was "Finder"
     icon: "finder.png",
     canOpen: true,
   },
@@ -71,31 +71,6 @@ const dockApps = [
     name: "Archive", // was "Trash"
     icon: "trash.png",
     canOpen: false,
-  },
-];
-
-const blogPosts = [
-  {
-    id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
   },
 ];
 
@@ -208,7 +183,6 @@ export {
   navLinks,
   navIcons,
   dockApps,
-  blogPosts,
   techStack,
   socials,
   photosLinks,
@@ -493,7 +467,7 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  projects: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  files: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   firefox: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },

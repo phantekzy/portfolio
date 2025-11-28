@@ -1,14 +1,17 @@
 /* Import section */
 import gsap from "gsap"
+import { useEffect, useState } from "react"
+import { Draggable } from "gsap/Draggable"
+/* COMPONENTS */
 import { Dock } from "./components/Dock"
 import { Navbar } from "./components/Navbar"
-import { Draggable } from "gsap/Draggable"
+import { LockScreen } from "./components/LockScreen"
+import { BootScreen } from "./components/BootScreen"
+/* WINDOWS */
 import TerminalWindow from "./windows/Terminal"
 import FirefoxWindow from "./windows/Firefox"
 import ResumeWindow from "./windows/Resume"
-import { useEffect, useState } from "react"
-import { LockScreen } from "./components/LockScreen"
-import { BootScreen } from "./components/BootScreen"
+import FileManagerWindow from "./windows/FilesManager"
 
 /* GSAP Registre */
 gsap.registerPlugin(Draggable)
@@ -49,6 +52,8 @@ function App() {
             <FirefoxWindow />
             {/* Resume window */}
             <ResumeWindow />
+            {/* Files manager window */}
+            <FileManagerWindow />
         </main>
     )
 }

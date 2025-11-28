@@ -1,9 +1,12 @@
 /* Import section */
 import { useState, useRef, useEffect } from "react";
+/* Store */
+import { useWindowStore } from "../store/window";
+/* Commands */
+import { about, contact, fastfetch, help, resume, skills, whoami } from "../commands/database";
+/* Windows */
 import { WindowControls } from "../components/WindowControls";
 import { WindowWrapper } from "../hoc/WindowWrapper";
-import { useWindowStore } from "../store/window";
-import { about, contact, fastfetch, help, resume, skills, whoami } from "../commands/database";
 
 /* Terminal window */
 const Terminal = () => {
@@ -41,15 +44,6 @@ const Terminal = () => {
         }
         if (isOpen) inputRef.current?.focus();
     }, [linesState, isOpen]);
-
-    /* Removed it because i added a trick for react i added a keyring so it renders again after closeing */
-    // Reset terminal when closed
-    /* useEffect(() => {
-        if (!isOpen) {
-            setLinesState([]);
-            setInput("");
-        }
-    }, [isOpen]); */
 
     /* Github repositories */
     const fetchGitHubRepos = async () => {
@@ -99,7 +93,6 @@ const Terminal = () => {
                 link.download = "resume.pdf"
                 link.click()
                 setLinesState(prev => [...prev, `[Downloaded resume.pdf]`]);
-                /* Invalid inputs because why not */
             } else {
                 setLinesState(prev => [...prev, `Invalid selection. Type 1 or 2.`]);
             }
