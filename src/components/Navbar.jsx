@@ -3,8 +3,10 @@ import { navIcons, navLinks } from "../constants";
 import dayjs from "dayjs";
 import { useMediaQuery } from "react-responsive";
 import { useWindowStore } from "../store/window";
+import { Lock } from "lucide-react";
+import { LockScreen } from "./LockScreen";
 /* Navbar component */
-export function Navbar() {
+export function Navbar({ onLock }) {
     /* useState */
     const isMobile = useMediaQuery({ query: '(max-width : 1024px)' })
     const { openWindow, focusedWindow } = useWindowStore()
@@ -30,7 +32,7 @@ export function Navbar() {
                                 onClick={() => openWindow(type)}
                             >
                                 <p
-                                    className={`${focusedWindow === type ? "text-black/50 scale-120" : "text-black"}`}
+                                    className={`${focusedWindow === type ? "text-white scale-120" : "text-white/50"}`}
 
                                 >{name}</p>
                             </li>
@@ -40,7 +42,7 @@ export function Navbar() {
 
 
                 {/* Date and time */}
-                <time>
+                <time className="text-gray-50/80">
                     {isMobile
                         ? dayjs().format('MMM D, h:mm A')
                         : dayjs().format('dddd, MMMM D, h:mm A')
@@ -48,18 +50,17 @@ export function Navbar() {
                 </time>
             </div>
 
-
             {/* OS icons */}
             <div>
                 <ul>
-                    {navIcons.map(({ id, img }) => (
-                        <li key={id}>
-                            <img
-                                src={img}
-                                className="icon-hover"
-                            />
-                        </li>
-                    ))}
+                    <li>
+                        <Lock
+                            className="icon-hover cursor-pointer"
+                            color="gray"
+                            size={18}
+                            onClick={onLock}
+                        />
+                    </li>
                 </ul>
             </div>
         </nav>

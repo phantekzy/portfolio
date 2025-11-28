@@ -2,12 +2,16 @@
 
 @import "tailwindcss";
 
+body.unlocked {
+  background-image: url("/images/wallpaper.jpg");
+}
 html,
 body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/wallpaper.jpg");
+  background: black;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +41,7 @@ body {
   }
 
   nav {
-    @apply relative bg-black/5  backdrop-blur-3xl flex mx-auto justify-between items-center p-2 px-5 select-none;
+    @apply relative bg-black/45  backdrop-blur-xl flex mx-auto justify-between items-center p-2 px-5 select-none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
     div {
@@ -71,15 +75,15 @@ body {
     @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
-      @apply bg-black/5 backdrop-blur-3xl justify-between rounded-2xl p-1.5 flex items-end gap-2;
+      @apply bg-black/45 backdrop-blur-xl justify-between rounded-2xl p-1.5 flex items-end gap-2;
     }
 
     .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-black/50 !text-white !shadow-2xl;
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-10 3xl:size-11 cursor-pointer;
 
       img {
         @apply object-cover object-center;

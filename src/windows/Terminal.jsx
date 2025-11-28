@@ -54,7 +54,7 @@ const Terminal = () => {
     /* Github repositories */
     const fetchGitHubRepos = async () => {
         try {
-            const res = await fetch("https://api.github.com/users/phantekzy/repos?sort=updated&direction=desc&per_page=5");
+            const res = await fetch("https://api.github.com/users/phantekzy/repos?sort=updated&direction=desc&per_page=10");
             if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
             const data = await res.json();
 
