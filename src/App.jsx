@@ -12,6 +12,8 @@ import TerminalWindow from "./windows/Terminal"
 import FirefoxWindow from "./windows/Firefox"
 import ResumeWindow from "./windows/Resume"
 import FileManagerWindow from "./windows/FilesManager"
+import TextWindow from "./windows/Text"
+import ImageWindow from "./windows/Images"
 
 /* GSAP Registre */
 gsap.registerPlugin(Draggable)
@@ -54,6 +56,10 @@ function App() {
             <ResumeWindow />
             {/* Files manager window */}
             <FileManagerWindow />
+            {/* Text Window */}
+            <TextWindow />
+            {/* Image window */}
+            <ImageWindow />
         </main>
     )
 }

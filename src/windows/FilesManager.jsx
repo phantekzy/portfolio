@@ -12,9 +12,13 @@ const FilesManager = () => {
     const { activeLocation, setActiveLocation } = useLocationStore()
     const { openWindow } = useWindowStore()
 
+    /* Open the folders  */
     const openItem = (item) => {
         if (item.fileType === 'pdf') return openWindow('resume')
         if (item.kind === 'folder') return setActiveLocation(item)
+        if (['fig', 'url'].includes(item.fileType) && item.href) return window.open(item.href, "_blank")
+
+        openWindow(`${item.fileType}${item.kind}`, item)
     }
     /* Helper to map over the lists */
     const renderList = (name, items) => (
