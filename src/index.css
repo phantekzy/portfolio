@@ -178,14 +178,14 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-2xl absolute top-60 left-5/12 bg-black/45 backdrop-blur-lg shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
 
     h3 {
-      @apply text-xl font-semibold;
+      @apply text-3xl font-bold text-white;
     }
 
     ul {
@@ -306,7 +306,7 @@ body {
       @apply flex-1 p-8 max-w-2xl relative;
 
       li {
-        @apply absolute flex items-center flex-col gap-3;
+        @apply flex items-center flex-col gap-3;
 
         img {
           @apply object-contain object-center size-16 relative group-hover:scale-105;

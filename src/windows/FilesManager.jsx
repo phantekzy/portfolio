@@ -124,17 +124,17 @@ const FilesManager = () => {
             <div className="flex h-full">
                 {/* Sidebar */}
                 <div className="sidebar">
-                    {renderList('Favorites', favorites)}
+                    {renderList('Main', favorites)}
 
                     {/* Work folder */}
                     {loadingWork
                         ? <p className="text-sm text-gray-400 px-2">Loading Work...</p>
-                        : renderList('Work', workChildren.length > 0 ? workChildren : locations.work.children)
+                        : renderList('Latest projects', workChildren.length > 0 ? workChildren : locations.work.children)
                     }
                 </div>
 
                 {/* Main content */}
-                <ul className="content">
+                <ul className="content grid grid-cols-3 gap-2">
                     {(activeLocation?.children || []).map((item) => (
                         <li
                             key={item.id}

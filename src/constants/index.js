@@ -39,7 +39,7 @@ const dockApps = [
   {
     id: "files",
     name: "Files", // was "Finder"
-    icon: "finder.png",
+    icon: "filemanager.png",
     canOpen: true,
   },
   {
@@ -106,29 +106,19 @@ const socials = [
     id: 1,
     text: "Github",
     icon: "/icons/github.svg",
-    bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/phantekzy",
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
-    bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    text: "Twitter/X",
+    icon: "/icons/twitter.svg",
+    link: "https://x.com/themainilotfi",
   },
   {
     id: 3,
-    text: "Twitter/X",
-    icon: "/icons/twitter.svg",
-    bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
-  },
-  {
-    id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
-    bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/maini-lotfi",
   },
 ];
 
@@ -179,16 +169,6 @@ const gallery = [
   },
 ];
 
-export {
-  navLinks,
-  navIcons,
-  dockApps,
-  techStack,
-  socials,
-  photosLinks,
-  gallery,
-};
-
 const WORK_LOCATION = {
   id: 1,
   type: "work",
@@ -211,7 +191,6 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-5",
       imageUrl: "/images/me.jpg",
     },
     {
@@ -220,7 +199,6 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-28 right-72",
       imageUrl: "/images/me2.jpg",
     },
     {
@@ -229,7 +207,6 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-52 left-80",
       imageUrl: "/images/me3.jpg",
     },
     {
@@ -238,8 +215,16 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-22 right-20",
       imageUrl: "/images/me5.jpg",
+    },
+
+    {
+      id: 6,
+      name: "picture5.png",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      imageUrl: "/images/me4.jpg",
     },
 
     {
@@ -248,9 +233,7 @@ const ABOUT_LOCATION = {
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
       subtitle: "Behind the Code",
-      image: "/images/me4.jpg",
       description: [
         "I'm a self taught full-stack developer focused on building modern, efficient, and scalable applications.",
         "I learn by doing  solving problems, experimenting with ideas, and improving through real projects rather than theory alone.",
@@ -274,8 +257,6 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
     },
   ],
 };
@@ -400,4 +381,15 @@ const bootSteps = [
   "[OK] Welcome to Archpholio!",
 ];
 
-export { INITIAL_Z_INDEX, WINDOW_CONFIG, bootSteps };
+export {
+  navLinks,
+  navIcons,
+  dockApps,
+  techStack,
+  socials,
+  photosLinks,
+  gallery,
+  INITIAL_Z_INDEX,
+  WINDOW_CONFIG,
+  bootSteps,
+};
