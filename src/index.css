@@ -346,11 +346,13 @@ body {
   }
 
   #home {
-    @apply relative z-0 max-sm:hidden;
+    @apply relative  z-0 max-sm:hidden p-6;
 
     ul {
+      @apply w-40 flex flex-col items-start gap-6; /* fixed width */
+
       li {
-        @apply absolute z-0 select-none flex items-center flex-col;
+        @apply select-none flex flex-col;
 
         img {
           @apply group-hover:bg-gray-950/10 p-1 rounded-md;

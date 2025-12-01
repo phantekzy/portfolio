@@ -15,6 +15,7 @@ import FileManagerWindow from "./windows/FilesManager"
 import TextWindow from "./windows/Text"
 import ImageWindow from "./windows/Images"
 import ContactWindow from "./windows/Contact"
+import Home from "./components/Home"
 
 /* GSAP Registre */
 gsap.registerPlugin(Draggable)
@@ -63,6 +64,8 @@ function App() {
             <ImageWindow />
             {/* Contact window */}
             <ContactWindow />
+            {/* Home section */}
+            <Home />
         </main>
     )
 }

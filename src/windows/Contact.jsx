@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="p-5 space-y-5">
             <img
                 src="/images/me5.jpg"
-                className="w-40 rounded-full"
+                className="w-30 rounded-full"
             />
 
             <h3>Contact & Collaboration</h3>
@@ -24,7 +24,7 @@ const Contact = () => {
                 If you’re interested in working together, collaborating, or just want to say hello,
                 feel free to reach out. I’m always open to new opportunities and meaningful conversations.
             </p>
-            <p className="text-white font-extrabold">mainilotfi@gmail.com</p>
+            <p className="text-white font-semibold">mainilotfi@gmail.com</p>
 
             <ul>
                 {socials.map(({ id, link, text, icon }) => (
