@@ -344,7 +344,7 @@ body {
   }
 
   #home {
-    @apply relative  z-0 max-sm:hidden p-6;
+    @apply relative  z-0 max-sm:hidden p-4;
 
     ul {
       @apply w-40 flex flex-col items-start gap-6; /* fixed width */
@@ -357,7 +357,7 @@ body {
         }
 
         p {
-          @apply text-xs text-white text-start px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-19 break-words;
+          @apply text-xs text-white text-start px-1 rounded-md group-hover:bg-gray-600 transition-colors max-w-19 break-words;
         }
       }
     }
