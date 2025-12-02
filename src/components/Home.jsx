@@ -84,8 +84,8 @@ const Home = () => {
                         key={project.id}
                         onClick={() => handleOpenProject(project)}
                     >
-                        <img src={project.icon} className="w-16 h-16 object-contain" />
-                        <p className="text-sm text-center">{project.name}</p>
+                        <img src={project.icon} className="w-9 h-9 object-contain" />
+                        <p>{project.name}</p>
                     </li>
                 ))}
             </ul>

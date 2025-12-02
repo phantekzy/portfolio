@@ -134,7 +134,7 @@ const FilesManager = () => {
                 </div>
 
                 {/* Main content */}
-                <ul className="content grid grid-cols-3 gap-2">
+                <ul className="content ">
                     {(activeLocation?.children || []).map((item) => (
                         <li
                             key={item.id}
