@@ -40,8 +40,7 @@ body {
   }
 
   nav {
-    @apply relative bg-black/45  backdrop-blur-xl flex mx-auto justify-between items-center p-2 px-5 select-none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    @apply relative bg-black/45  backdrop-blur-xl flex mx-auto justify-between items-center p-2 px-5 select-none border-b border-white/40;
 
     div {
       @apply flex items-center max-sm:w-full max-sm:justify-between gap-5;
@@ -74,7 +73,7 @@ body {
     @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
-      @apply bg-black/45 backdrop-blur-xl justify-between rounded-2xl p-1.5 flex items-end gap-2;
+      @apply bg-black/45 backdrop-blur-xl justify-between rounded-2xl p-1.5 flex items-end gap-4;
     }
 
     .tooltip {
@@ -107,7 +106,7 @@ body {
   }
 
   #window-header {
-    @apply flex items-center justify-between px-4 py-1.5 bg-black/30  select-none text-sm text-white font-bold;
+    @apply flex items-center justify-between px-4 py-1.5 bg-black/30 border-b border-white/40  select-none text-sm text-white font-bold;
   }
 
   #firefox {
@@ -155,7 +154,7 @@ body {
   }
 
   #terminal {
-    @apply absolute top-32 left-1/12 w-[50%] h-[70vh] bg-black/50 backdrop-blur-lg shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
+    @apply absolute top-32 left-1/12 w-[50%] h-[70vh] bg-black/50 backdrop-blur-lg shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl border border-white/40 outline-none;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -177,7 +176,7 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-black/45 backdrop-blur-lg shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-2xl absolute top-60 left-5/12 bg-black/45 backdrop-blur-lg shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden border border-white/40;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -275,10 +274,10 @@ body {
   }
 
   #files {
-    @apply absolute w-3xl left-40 top-20 shadow-2xl bg-black/55 text-white backdrop-blur-lg drop-shadow-2xl overflow-hidden rounded-xl;
+    @apply absolute w-3xl left-40 top-20 shadow-2xl bg-black/55 text-white backdrop-blur-lg drop-shadow-2xl overflow-hidden rounded-xl border border-white/40;
 
     .sidebar {
-      @apply w-48 bg-black/10 border-r border-black flex flex-col p-5 space-y-3;
+      @apply w-48 bg-black/10 border-r border-white/40 flex flex-col p-5 space-y-3;
 
       h3 {
         @apply text-xs font-medium text-gray-400 mb-1;

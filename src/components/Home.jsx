@@ -3,6 +3,7 @@ import { Draggable } from "gsap/Draggable";
 import { useEffect, useState } from "react";
 import { useWindowStore } from "../store/window";
 import { useLocationStore } from "../store/location";
+import { dockApps } from "../constants";
 
 const Home = () => {
     const { setActiveLocation } = useLocationStore()
@@ -78,6 +79,18 @@ const Home = () => {
     return (
         <section id="home" className="relative w-full h-full">
             <ul className="relative">
+                {dockApps.map(({ id, name, icon }) => (
+                    <li
+                        className="group folder"
+                        key={id}>
+                        <img src={`/images/${icon}`}
+                            className="w-9 h-9 object-contain"
+                            onClick={() => openWindow(id)}
+                        />
+                        <p>{name}</p>
+                    </li>
+                ))}
+
                 {projects.map(project => (
                     <li
                         className={clsx("group folder")}
@@ -88,6 +101,7 @@ const Home = () => {
                         <p>{project.name}</p>
                     </li>
                 ))}
+
             </ul>
         </section>
     );

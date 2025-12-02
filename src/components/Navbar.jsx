@@ -17,7 +17,7 @@ export function Navbar({ onLock }) {
             <div>
                 {/* Logo image */}
                 <img
-                    src="/archblack.png"
+                    src="/archlogo.svg"
                     className="h-5 w-5"
                 />
                 <p className="font-bold text-white/70 text-xs">{currentDir}</p>

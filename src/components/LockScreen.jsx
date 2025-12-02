@@ -33,7 +33,7 @@ export function LockScreen({ onUnlock }) {
             <div
                 className="absolute inset-0 bg-cover bg-center transition-all duration-500"
                 style={{
-                    backgroundImage: `url("/images/wallpaper3.jpeg")`,
+                    backgroundImage: `url("/images/wallpaper4.jpeg")`,
                     filter: unlockedLayer ? "blur(6px)" : "none",
                     transform: unlockedLayer ? "scale(1.09)" : "scale(1)"
                 }}
