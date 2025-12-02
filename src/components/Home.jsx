@@ -22,6 +22,9 @@ const Home = () => {
                     id: repo.id,
                     name: repo.name,
                     icon: "/images/open-folder.png",
+                    description: [repo.description || "No description provided"],
+                    href: repo.html_url,
+
                 }));
                 setProjects(repos);
             } catch (err) {
@@ -53,7 +56,7 @@ const Home = () => {
                     name: project.name,
                     kind: "file",
                     fileType: "url",
-                    href: project.html_url,
+                    href: project.href,
                     icon: "/images/firefox.png",
                     position: "top-5 left-40",
                 },
