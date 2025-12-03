@@ -139,9 +139,12 @@ const FilesManager = () => {
                         <li
                             key={item.id}
                             className={item.position}
-                            onClick={() => openItem(item)}
+
                         >
-                            <img src={item.icon} />
+                            <img src={item.icon}
+                                onClick={() => openItem(item)}
+
+                            />
                             <p>{item.name}</p>
                         </li>
                     ))}

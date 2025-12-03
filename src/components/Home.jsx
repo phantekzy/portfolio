@@ -3,7 +3,7 @@ import { Draggable } from "gsap/Draggable";
 import { useEffect, useState } from "react";
 import { useWindowStore } from "../store/window";
 import { useLocationStore } from "../store/location";
-import { dockApps } from "../constants";
+import { dockApps, locations } from "../constants";
 
 const Home = () => {
     const { setActiveLocation } = useLocationStore()
@@ -88,7 +88,14 @@ const Home = () => {
                         key={id}>
                         <img src={`/images/${icon}`}
                             className="w-9 h-9 object-contain"
-                            onClick={() => openWindow(id)}
+                            onClick={() => {
+                                if (id === "trash") {
+                                    setActiveLocation(locations.trash)
+                                    openWindow("files")
+                                } else {
+                                    openWindow(id)
+                                }
+                            }}
                         />
                         <p>{name}</p>
                     </li>

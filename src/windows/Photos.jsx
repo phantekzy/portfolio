@@ -10,12 +10,9 @@ const Photos = () => {
         <>
             <div id="window-header">
                 <WindowControls target="photos" />
-
                 <div className="w-full flex justify-end items-center gap-3 text-white">
                     <h2>Photos</h2>
-
                 </div>
-
             </div>
 
             <div className="flex w-full">
