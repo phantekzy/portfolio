@@ -4,6 +4,7 @@ import { useWindowStore } from "../store/window";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { useMediaQuery } from "react-responsive";
 
 export function WindowWrapper(Component, windowKey) {
     const Wrapped = (props) => {
@@ -37,18 +38,26 @@ export function WindowWrapper(Component, windowKey) {
             );
         }, [isOpen]);
 
+        /* React responsive */
+        const isMobile = useMediaQuery({ maxWidth: 640 });
+
         // Make draggable
         useGSAP(() => {
             const element = ref.current;
             if (!element) return;
 
-            const draggableInstance = Draggable.create(element, {
-                onPress: () => focusWindow(windowKey),
-            })[0];
+            // Cleanup any existing Draggable
+            let draggableInstance;
+            if (!isMobile) {
+                draggableInstance = Draggable.create(element, {
+                    onPress: () => focusWindow(windowKey),
+                })[0];
+            }
 
-            // Cleanup on unmount
-            return () => draggableInstance.kill();
-        }, [windowKey, focusWindow]);
+            return () => {
+                draggableInstance?.kill(); // remove previous Draggable
+            };
+        }, [windowKey, focusWindow, isMobile]); // <-- watch isMobile
 
         // Hide/show based on isOpen
         useLayoutEffect(() => {

@@ -38,31 +38,31 @@ const navIcons = [
 const dockApps = [
   {
     id: "files",
-    name: "Files", // was "Finder"
+    name: "Files",
     icon: "filemanager.png",
     canOpen: true,
   },
   {
     id: "firefox",
-    name: "firefox", // was "Safari"
+    name: "firefox",
     icon: "firefox.png",
     canOpen: true,
   },
   {
     id: "photos",
-    name: "Gallery", // was "Photos"
+    name: "Gallery",
     icon: "photos.png",
     canOpen: true,
   },
   {
     id: "contact",
-    name: "Contact", // or "Get in touch"
+    name: "Contact",
     icon: "contact.png",
     canOpen: true,
   },
   {
     id: "terminal",
-    name: "Terminal", // was "Terminal"
+    name: "Terminal",
     icon: "terminal.png",
     canOpen: true,
   },

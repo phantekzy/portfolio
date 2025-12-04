@@ -3,7 +3,7 @@ import { Draggable } from "gsap/Draggable";
 import { useEffect, useState } from "react";
 import { useWindowStore } from "../store/window";
 import { useLocationStore } from "../store/location";
-import { dockApps, locations } from "../constants";
+import { dockApps } from "../constants";
 
 const Home = () => {
     const { setActiveLocation } = useLocationStore()
@@ -21,7 +21,7 @@ const Home = () => {
                 const repos = data.map(repo => ({
                     id: repo.id,
                     name: repo.name,
-                    icon: "/images/open-folder.png",
+                    icon: "/images/openfolder.png",
                     description: [repo.description || "No description provided"],
                     href: repo.html_url,
 
@@ -88,14 +88,7 @@ const Home = () => {
                         key={id}>
                         <img src={`/images/${icon}`}
                             className="w-9 h-9 object-contain"
-                            onClick={() => {
-                                if (id === "trash") {
-                                    setActiveLocation(locations.trash)
-                                    openWindow("files")
-                                } else {
-                                    openWindow(id)
-                                }
-                            }}
+                            onClick={() => openWindow(id)}
                         />
                         <p>{name}</p>
                     </li>
